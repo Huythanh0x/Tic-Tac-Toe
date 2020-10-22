@@ -21,36 +21,10 @@ public class MainActivity extends AppCompatActivity {
     int tagTap;
     boolean gameContinue = true;
     int[] array = {2, 2, 2, 2, 2, 2, 2, 2, 2};
-    int[] followStep = {10, 10, 10, 10, 10, 10, 10, 10, 10};
     int[][] wPositions = {{0, 1, 2}, {3, 4, 5}, {6, 7, 8}, {0, 3, 6}, {1, 4, 7}, {2, 5, 8},
             {0, 4, 8}, {2, 4, 6}};
-    int checkRedo(){
-        for (int i = 0; i < 9; i++){
-            if(followStep[i] != 10)
-                return followStep[i];
-        }
-        return 10;
-    }
-    int lastPosition(){
-        for (int i = 9 ; i >= 0;i--){
-            //if(followStep[i] != 10){
-            int x;
-        }
-        return 10;
-    }
-    public void Redo(){
 
-        String lastPosition = "";
-    }
-    public void buttonRedo(View view){
-        if(checkRedo()!= 10){
-            Redo();
-        }
-        else{
-            //Do something
-            Toast.makeText(this,"There are nothing to do !!",Toast.LENGTH_SHORT).show();
-        }
-    }
+
     public boolean checkWin() {
         for (int[] winningPosition : wPositions) {
 
@@ -110,13 +84,7 @@ public class MainActivity extends AppCompatActivity {
         if (array[tagTap] == 2 && gameContinue) {
             getProcess(show);
             showWin();
-            for (int i = 0; i < 9; i++){
-                if(followStep[i] == 10){
-                    followStep[i] = tagTap;
-                    break;
-                }
 
-            }
         }
     }
 
